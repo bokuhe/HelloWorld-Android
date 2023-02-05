@@ -6,15 +6,20 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.support.AndroidSupportInjectionModule
+import net.sleiv.helloworld.TextService
+import net.sleiv.helloworld.data.remote.module.RetrofitModule
 import net.sleiv.helloworld.di.viewmodel.ViewModelModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
+        RetrofitModule::class,
+        TextService::class,
+        UtilsModule::class,
         ViewModelModule::class,
-        AndroidSupportInjectionModule::class,
-        ActivityBindingModule::class
+        ActivityBindingModule::class,
+        AndroidSupportInjectionModule::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {

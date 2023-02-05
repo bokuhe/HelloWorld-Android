@@ -6,11 +6,11 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import net.sleiv.helloworld.ui.MainViewModel
 
+@Suppress("unused")
 @Module
 abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun provideMainViewModel(vm: MainViewModel): ViewModel
-
 }
